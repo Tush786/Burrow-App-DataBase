@@ -5,6 +5,7 @@ const { UserRouter } = require("./backend/route/userroute");
 const { productRouter } = require("./backend/route/productroute");
 const { Addressroute } = require("./backend/route/addressroute");
 const { Authentication } = require("./backend/middlwere/Authentication");
+const { Cartrouter } = require("./backend/route/Cartrouter");
 
 require("dotenv").config();
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use("/user", UserRouter);
 app.use("/productsapi", productRouter);
 app.use('/address',Authentication, Addressroute);
+app.use('/cart', Authentication, Cartrouter);
 
 // Setting up the server port
 const PORT = process.env.PORT || 9111;
