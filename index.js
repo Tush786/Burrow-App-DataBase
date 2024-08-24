@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { connection } = require("./backend/config/connection");
 const { UserRouter } = require("./backend/route/userroute");
+const { productRouter } = require("./backend/route/productroute");
 
 require("dotenv").config();
 
@@ -15,6 +16,7 @@ app.use(
 
 app.use(express.json());
 app.use("/user", UserRouter);
+app.use("/productsapi", productRouter);
 
 // Setting up the server port
 const PORT = process.env.PORT || 9111;
