@@ -26,7 +26,7 @@ Forgetpassrouter.post("/forgotPassword", async (req, res) => {
   await user.save();
 
   // Send email with reset token
-  const resetUrl = `https://burrow-app-clone.vercel.app/forgetpassword?token=${resetToken}`;
+  const resetUrl = `https://burrow-app-clone.vercel.app/Profile/forgetpassword?token=${resetToken}`;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
