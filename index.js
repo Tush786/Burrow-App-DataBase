@@ -8,6 +8,7 @@ const { Authentication } = require("./backend/middlwere/Authentication");
 const { Cartrouter } = require("./backend/route/Cartrouter");
 const { Forgetpassrouter } = require("./backend/route/forgetpassword");
 const { OrderRoute } = require("./backend/route/orderrote");
+const { OrderConfirm } = require("./backend/route/orderConfirm");
 
 require("dotenv").config();
 
@@ -26,6 +27,7 @@ app.use('/address',Authentication, Addressroute);
 app.use('/cart', Authentication, Cartrouter);
 app.use('/pass', Forgetpassrouter);
 app.use('/order', Authentication, OrderRoute);
+app.use('/orderConfirm', OrderConfirm);
 
 // Setting up the server port
 const PORT = process.env.PORT || 9111;
